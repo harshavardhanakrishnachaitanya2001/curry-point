@@ -8,6 +8,9 @@ import Brinjal from './Brinjal'
 import BottleGaurd from './BottleGaurd'
 import Beans from './Beans'
 import Bittergod from './Bittergod'
+import Cabage from './Cabage'
+import Caleeflower from './Caleeflower'
+import Capsicum from './Capsicum'
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
 const PageHeading=styled.h1`
 text-align:center;
@@ -40,6 +43,9 @@ function App(){
                 <Link to="/Brinjal"><Button>Brijal</Button></Link>
                 <Link to="/BottleGaurd"><Button>Bottle gaurd</Button></Link>
                 <Link to="Beans"><Button>Beans</Button></Link>
+                <Link to="Cabage"><Button>Cabage</Button></Link>
+                <Link to="Caleeflower"><Button>Caleeflower</Button></Link>
+                <Link to="Capsicum"><Button>Capsicum</Button></Link>
                 <Link to="/Bittergod"><Button>Bitter God</Button></Link><br /><br />
                 <Link to="/Home"><ReturnButton>Back to Home</ReturnButton></Link>
                 <Route path="/" exact/>
@@ -50,6 +56,9 @@ function App(){
                 <Route path="/Brinjal" component={Brinjal}/>
                 <Route path="/BottleGaurd" component={BottleGaurd}/>
                 <Route path="/Beans" component={Beans}/>
+                <Route path="/Cabage" component={Cabage}/>
+                <Route path="/Caleeflower" component={Caleeflower}/>
+                <Route path="/Capsicum" component={Capsicum}/>
                 <Route path="/Bittergod" component={Bittergod}/>
             </Body>
         </Router>
