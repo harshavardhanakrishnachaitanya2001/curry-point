@@ -11,6 +11,7 @@ import Bittergod from './Bittergod'
 import Cabage from './Cabage'
 import Caleeflower from './Caleeflower'
 import Capsicum from './Capsicum'
+import Bananna from './Bananna'
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
 const PageHeading=styled.h1`
 text-align:center;
@@ -46,6 +47,7 @@ function App(){
                 <Link to="Cabage"><Button>Cabage</Button></Link>
                 <Link to="Caleeflower"><Button>Caleeflower</Button></Link>
                 <Link to="Capsicum"><Button>Capsicum</Button></Link>
+                <Link to="Bananna"><Button>Bananna</Button></Link>
                 <Link to="/Bittergod"><Button>Bitter God</Button></Link><br /><br />
                 <Link to="/Home"><ReturnButton>Back to Home</ReturnButton></Link>
                 <Route path="/" exact/>
@@ -60,6 +62,7 @@ function App(){
                 <Route path="/Caleeflower" component={Caleeflower}/>
                 <Route path="/Capsicum" component={Capsicum}/>
                 <Route path="/Bittergod" component={Bittergod}/>
+                <Route path="/Bananna" component={Bananna}/>
             </Body>
         </Router>
     )
