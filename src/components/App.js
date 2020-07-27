@@ -1,6 +1,14 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
-import CurryDetails from './CurryDetails'
+import Tomato from './Tomato'
+import Beatroot from './Beatroot'
+import Aloo from './Aloo'
+import Carrot from './Carrot'
+import Brinjal from './Brinjal'
+import BottleGaurd from './BottleGaurd'
+import Beans from './Beans'
+import Bittergod from './Bittergod'
+import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
 const PageHeading=styled.h1`
 text-align:center;
 color:floralwhite;
@@ -11,29 +19,40 @@ margin:0px;
 padding:0px;
 font-family:sans-serif;
 `
-const ReadUserInput=styled.form`
-color:floralwhite;
+const Button=styled.button`
+border:2px solid black;
+font-size:25px;
+margin-right:5px;
+text-align:center;
+`
+const ReturnButton=styled(Button)`
+float:right;
 `
 function App(){
-    const listOfVagetables=[];
-    const [change,setChange]=useState('')
-    function handleChange(event){
-        setChange(event.target.value);
-    }
-    function handleSubmit(e){
-        e.preventDefault();
-        listOfVagetables.push(change);
-        alert(listOfVagetables)
-    }
     return (
-        <Body>
-            <PageHeading>Curry Point</PageHeading>
-            <ReadUserInput onSubmit={handleSubmit}>
-                <label><b>Name of vegetable:</b></label>
-                <input type="text" placeholder="Name a vegetable" name="nameOfVegetable" onChange={handleChange} />
-                <button type="submit" onSubmit={handleSubmit}>Search</button>
-            </ReadUserInput>
-        </Body>
+        <Router>
+            <Body>
+                <PageHeading>Curry Point</PageHeading>
+                <Link to="Tomato"><Button>Tomato</Button></Link>
+                <Link to="/Beatroot"><Button>Beatroot</Button></Link>
+                <Link to="/Aloo"><Button>Aloo</Button></Link>
+                <Link to="/Carrot"><Button>Carrot</Button></Link>
+                <Link to="/Brinjal"><Button>Brijal</Button></Link>
+                <Link to="/BottleGaurd"><Button>Bottle gaurd</Button></Link>
+                <Link to="Beans"><Button>Beans</Button></Link>
+                <Link to="/Bittergod"><Button>Bitter God</Button></Link><br /><br />
+                <Link to="/Home"><ReturnButton>Back to Home</ReturnButton></Link>
+                <Route path="/" exact/>
+                <Route path="/Tomato" component={Tomato} />
+                <Route path="/Beatroot" component={Beatroot}/>
+                <Route path="/Aloo" component={Aloo}/>
+                <Route path="/Carrot" component={Carrot}/>
+                <Route path="/Brinjal" component={Brinjal}/>
+                <Route path="/BottleGaurd" component={BottleGaurd}/>
+                <Route path="/Beans" component={Beans}/>
+                <Route path="/Bittergod" component={Bittergod}/>
+            </Body>
+        </Router>
     )
 }
 export default App
